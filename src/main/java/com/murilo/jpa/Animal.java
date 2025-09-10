@@ -1,31 +1,20 @@
 
 package com.murilo.jpa;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Pessoa {
 
+public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
-    private String sobrenome;
+    private String especie;
     private boolean Vivo;
-
-    public Pessoa(Long id, String nome, String sobrenome, boolean Vivo) {
-        this.id = id;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.Vivo = Vivo;
-    }
-
-    public Pessoa() {
-    }
 
     public Long getId() {
         return id;
@@ -43,19 +32,26 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getEspecie() {
+        return especie;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
 
-    public boolean getVivo() {
-        return this.Vivo;
+    public boolean isVivo() {
+        return Vivo;
     }
 
-    public void setVivo(boolean Vivo) {
+    public void setVivo(boolean vivo) {
+        Vivo = vivo;
+    }
+
+    public Animal(Long id, String nome, String especie, boolean Vivo) {
+        this.id = id;
+        this.nome = nome;
+        this.especie = especie;
         this.Vivo = Vivo;
     }
 }

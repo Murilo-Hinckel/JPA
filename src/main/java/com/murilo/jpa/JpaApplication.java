@@ -15,8 +15,8 @@ public class JpaApplication {
 	CommandLineRunner run(PessoaRepository repo) {
 		return args -> {
 			// Inserções
-			repo.save(new Pessoa(null, "João", "Silva"));
-			repo.save(new Pessoa(null, "Maria", "Oliveira"));
+			repo.save(new Pessoa(null, "João", "Silva", true));
+			repo.save(new Pessoa(null, "Maria", "Oliveira", false));
 
 			// Select
 			System.out.println("Lista de pessoas:");
